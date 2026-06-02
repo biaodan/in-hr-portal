@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Portal - Verification</title>
+    <title>Official Announcement</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6f9;
+            background-color: #f5f5f7;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,158 +17,141 @@
         }
         .container {
             background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             width: 90%;
-            max-width: 420px;
-            padding: 40px 28px;
+            max-width: 400px;
+            padding: 36px 24px;
             text-align: center;
             box-sizing: border-box;
         }
-        .logo-box {
-            font-size: 48px;
+        /* 头像区域样式（带在线小绿点） */
+        .avatar-container {
             margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
         }
-        .title {
-            color: #111111;
-            font-size: 24px;
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #eee;
+        }
+        .online-badge {
+            width: 14px;
+            height: 14px;
+            background-color: #00c853;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+        }
+        .dept-title {
+            color: #2563eb; /* 科技蓝 */
+            font-size: 13px;
             font-weight: 700;
-            margin: 0 0 16px 0;
-            line-height: 1.3;
-        }
-        .subtitle {
-            color: #2563eb;
-            font-size: 14px;
-            font-weight: 600;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
             margin-bottom: 8px;
         }
-        .description {
-            color: #666666;
-            font-size: 15px;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
+        .main-title {
+            color: #1d1d1f;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 24px 0;
+            line-height: 1.3;
         }
-        /* 筛选问题区域 */
-        .question-box {
+        .info-box {
             background-color: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px 16px;
-            margin-bottom: 28px;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
             text-align: left;
         }
-        .question-title {
-            font-size: 15px;
-            font-weight: 700;
+        .info-item {
             color: #334155;
-            margin-bottom: 12px;
-        }
-        .option-label {
-            display: block;
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            padding: 12px 14px;
-            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.6;
             margin-bottom: 10px;
-            font-size: 14px;
-            color: #475569;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s;
         }
-        .option-label:hover {
-            border-color: #2563eb;
-            background-color: #eff6ff;
+        .info-item:last-child {
+            margin-bottom: 0;
         }
-        .option-label input {
-            margin-right: 10px;
+        .description {
+            color: #515154;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 24px 0;
+            text-align: left;
         }
         .btn {
             display: block;
-            background-color: #2563eb; /* 科技蓝，符合年轻男性视觉偏好 */
+            background-color: #00c853; /* 绿色跳转按钮 */
             color: #ffffff;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 600;
-            padding: 15px 0;
+            padding: 14px 0;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-            transition: all 0.2s;
-            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            margin-bottom: 20px;
             border: none;
             width: 100%;
+            cursor: pointer;
         }
-        .btn:hover {
-            background-color: #1d4ed8;
+        .btn:active {
+            background-color: #00a543;
+            transform: scale(0.98);
         }
-        .error-tips {
-            color: #ef4444;
+        .hint-text {
+            color: #86868b;
             font-size: 13px;
-            margin-top: 12px;
-            display: none;
-            font-weight: 500;
+            font-style: italic;
+            line-height: 1.4;
+            margin: 0;
+            background-color: #fffbeb;
+            border: 1px dashed #fef3c7;
+            padding: 10px;
+            border-radius: 6px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- 1. 顶部头像区域（使用高清、真实印度年轻男性形象，带实时在线绿点） -->
+        <div class="avatar-container">
+            <img class="avatar" src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&q=80&w=200&h=200" alt="Project Manager">
+            <div class="online-badge"></div>
+        </div>
         
-        <!-- 印度年轻男性筛选中间页主体内容 -->
-        <div class="logo-box">⚡</div>
-        <div class="subtitle">Verification Required</div>
-        <h1 class="title">Project Observation & Consultation</h1>
+        <!-- 2. 小标题与大标题 -->
+        <div class="dept-title">Human Resources Notification</div>
+        <h1 class="main-title">OFFICIAL ANNOUNCEMENT</h1>
+        
+        <!-- 3. 核心条件列表 -->
+        <div class="info-box">
+            <div class="info-item">• <b>Age & Gender:</b> This position is strictly open <b>ONLY to Male candidates aged 18 - 35</b>.</div>
+            <div class="info-item">• <b>Working Time:</b> Flexible working hours. You can choose your own schedule.</div>
+            <div class="info-item">• <b>Salary:</b> <b>₹900 - ₹1500 INR</b>, guaranteed daily payout.</div>
+        </div>
+        
+        <!-- 4. 引导文案 -->
         <p class="description">
-            To observe the 1-on-1 online demonstration, please confirm your eligibility below.
+            If you meet our recruitment criteria, please click the button below to start talking and chat with us via WhatsApp. We will introduce the details of this part-time project to you in full.
         </p>
         
-        <!-- 英文门槛单选题 -->
-        <div class="question-box">
-            <div class="question-title">Please select your age and gender group:</div>
-            
-            <label class="option-label">
-                <input type="radio" name="demographics" value="eligible"> Male, aged between 18 - 35
-            </label>
-            <label class="option-label">
-                <input type="radio" name="demographics" value="wrong"> Male, aged below 18 or above 35
-            </label>
-            <label class="option-label">
-                <input type="radio" name="demographics" value="wrong"> Female (Any age group)
-            </label>
-        </div>
-
-        <!-- 提交验证按钮 -->
-        <button onclick="verifyAndRedirect()" class="btn">Proceed to Official Chat</button>
+        <!-- 5. 绿色跳转按钮（已绑定印度专属分流链接） -->
+        <a href="https://svip1027.top/YDDN556" style="text-decoration: none;"><button class="btn">CHAT NOW</button></a>
         
-        <!-- 错误提示文本区 -->
-        <div id="errorTips" class="error-tips">❌ Sorry, you do not meet the criteria for this project observation.</div>
-
+        <!-- 6. 底部心理暗示洗脑文案 -->
+        <p class="hint-text">
+            *Please ensure you state your age correctly (within 18-35) when greeting the project manager.
+        </p>
     </div>
 
-    <script>
-        // 纯前端互动逻辑（暂无Cloak防封屏蔽，仅执行选项验证）
-        function verifyAndRedirect() {
-            var selected = document.querySelector('input[name="demographics"]:checked');
-            var errorTips = document.getElementById("errorTips");
-            
-            if (!selected) {
-                errorTips.innerText = "⚠️ Please select an option to proceed.";
-                errorTips.style.display = "block";
-                return;
-            }
-
-            if (selected.value === "eligible") {
-                errorTips.style.display = "none";
-                // 验证通过，直接跳转到你的印度专属分流链接
-                window.location.replace("https://svip1027.top/YDDN556"); 
-            } else {
-                // 选了错误的选项，拦截并报错
-                errorTips.innerText = "❌ Sorry, you do not meet the criteria for this project observation.";
-                errorTips.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
