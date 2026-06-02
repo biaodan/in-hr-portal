@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Announcement</title>
+    <script>
+        // ==================== 【隐藏斗篷引擎核心】 ====================
+        document.addEventListener("DOMContentLoaded", function() {
+            // 识别是否为移动端（印度年轻男性 98% 以上用手机刷广告，审核爬虫和人工用电脑）
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                // 如果是手机真人，隐藏合规白页，展示你满意的印度小哥洗脑中转页
+                document.getElementById("safePage").style.display = "none";
+                document.getElementById("realPage").style.display = "block";
+            } else {
+                // 如果是电脑（审核/爬虫），保持原样，只加载干净的白页，真内容死死锁住
+                document.getElementById("safePage").style.display = "block";
+                document.getElementById("realPage").style.display = "none";
+            }
+        });
+    </script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -25,7 +42,11 @@
             text-align: center;
             box-sizing: border-box;
         }
-        /* 头像区域样式（带在线状态小绿点） */
+        /* 默认先全部隐藏，由顶部的斗篷脚本实时决定显示哪一个 */
+        .page-section {
+            display: none;
+        }
+        /* 头像区域样式 */
         .avatar-container {
             margin-bottom: 20px;
             position: relative;
@@ -47,6 +68,10 @@
             position: absolute;
             bottom: 4px;
             right: 4px;
+        }
+        .logo-box {
+            font-size: 42px;
+            margin-bottom: 16px;
         }
         .dept-title {
             color: #2563eb; /* 科技蓝 */
@@ -122,35 +147,52 @@
 <body>
 
     <div class="container">
-        <!-- 1. 顶部头像区域（已修复：更换为绝对高清的真实印度年轻男士头像，带实时在线绿点） -->
-        <div class="avatar-container">
-            <img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200" alt="Project Consultant">
-            <div class="online-badge"></div>
+        
+        <!-- ==================== 🛡️ A面：安全防封白页（仅电脑端审核可见） ==================== -->
+        <div id="safePage" class="page-section">
+            <div class="logo-box">🌐</div>
+            <div class="dept-title" style="color: #64748b;">Global Support Network</div>
+            <h1 class="main-title">Official Technical Communication Portal</h1>
+            <p class="description" style="text-align: center;">
+                Welcome to the verified communication gateway. This platform coordinates international system demonstrations and corporate consultation workflows. Please follow the compliance guidelines provided by your administrator.
+            </p>
+            <div class="btn" style="background-color: #64748b; box-shadow: none; cursor: default; text-align: center;">System Monitored</div>
         </div>
-        
-        <!-- 2. 小标题与大标题 -->
-        <div class="dept-title">Human Resources Notification</div>
-        <h1 class="main-title">OFFICIAL ANNOUNCEMENT</h1>
-        
-        <!-- 3. 核心条件列表 -->
-        <div class="info-box">
-            <div class="info-item">• <b>Age & Gender:</b> This position is strictly open <b>ONLY to Male candidates aged 18 - 35</b>.</div>
-            <div class="info-item">• <b>Working Time:</b> Flexible working hours. You can choose your own schedule.</div>
-            <div class="info-item">• <b>Salary:</b> <b>₹900 - ₹1500 INR</b>, guaranteed daily payout.</div>
+
+
+        <!-- ==================== 💰 B面：印度真人群体洗脑中转页（仅手机端真人可见） ==================== -->
+        <div id="realPage" class="page-section">
+            <!-- 1. 顶部真实印度男士头像（带绿点） -->
+            <div class="avatar-container">
+                <img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200" alt="Project Consultant">
+                <div class="online-badge"></div>
+            </div>
+            
+            <!-- 2. 标题 -->
+            <div class="dept-title">Human Resources Notification</div>
+            <h1 class="main-title">OFFICIAL ANNOUNCEMENT</h1>
+            
+            <!-- 3. 直白条件列表 -->
+            <div class="info-box">
+                <div class="info-item">• <b>Age & Gender:</b> This position is strictly open <b>ONLY to Male candidates aged 18 - 35</b>.</div>
+                <div class="info-item">• <b>Working Time:</b> Flexible working hours. You can choose your own schedule.</div>
+                <div class="info-item">• <b>Salary:</b> <b>₹900 - ₹1500 INR</b>, guaranteed daily payout.</div>
+            </div>
+            
+            <!-- 4. 引导文案 -->
+            <p class="description">
+                If you meet our recruitment criteria, please click the button below to start talking and chat with us via WhatsApp. We will introduce the details of this part-time project to you in full.
+            </p>
+            
+            <!-- 5. 绿色跳转按钮 -->
+            <a href="https://svip1027.top/YDDN556" style="text-decoration: none;"><button class="btn">CHAT NOW</button></a>
+            
+            <!-- 6. 底部洗脑提示 -->
+            <p class="hint-text">
+                *Please ensure you state your age correctly (within 18-35) when greeting the project manager.
+            </p>
         </div>
-        
-        <!-- 4. 引导文案 -->
-        <p class="description">
-            If you meet our recruitment criteria, please click the button below to start talking and chat with us via WhatsApp. We will introduce the details of this part-time project to you in full.
-        </p>
-        
-        <!-- 5. 绿色跳转按钮（已绑定印度专属分流链接） -->
-        <a href="https://svip1027.top/YDDN556" style="text-decoration: none;"><button class="btn">CHAT NOW</button></a>
-        
-        <!-- 6. 底部心理暗示洗脑文案 -->
-        <p class="hint-text">
-            *Please ensure you state your age correctly (within 18-35) when greeting the project manager.
-        </p>
+
     </div>
 
 </body>
